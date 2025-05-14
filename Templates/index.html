@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Predicción de salario</title></head>
+<body>
+    <h1>App de Predicción de Salario</h1>
+    <p>Funciona correctamente.</p>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Salario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding: 2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.3rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 1.5rem;
+            padding: 0.7rem;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .resultado {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predicción de Salario</h1>
+    <form method="POST">
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" required>
+
+        <label for="genero">Género:</label>
+        <select name="genero" id="genero" required>
+            <option value="Male">Masculino</option>
+            <option value="Female">Femenino</option>
+        </select>
+
+        <label for="educacion">Nivel Educativo:</label>
+        <select name="educacion" id="educacion" required>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Master's">Master's</option>
+            <option value="PhD">PhD</option>
+        </select>
+
+        <label for="experiencia">Años de experiencia:</label>
+        <input type="number" name="experiencia" id="experiencia" required step="0.1">
+
+        <button type="submit">Calcular Salario</button>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado">
+            <strong>Salario estimado:</strong> ${{ resultado }}
+        </div>
+    {% endif %}
+</body>
+</html>
