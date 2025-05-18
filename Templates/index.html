@@ -87,10 +87,12 @@
         <button type="submit">Calcular Salario</button>
     </form>
 
-    {% if resultado %}
-        <div class="resultado">
-            <strong>Salario estimado:</strong> ${{ resultado }}
-        </div>
+    {% if salario_anual %}
+    <div class="resultado">
+        <p><strong>Salario estimado anual:</strong> ${{ salario_anual }}</p>
+        <p><strong>Salario estimado mensual:</strong> ${{ salario_mensual }}</p>
+    </div>
     {% endif %}
+
 </body>
 </html>

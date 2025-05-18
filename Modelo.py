@@ -16,11 +16,12 @@ def predecir_salario(edad, genero, educacion, experiencia):
     # Codificar género y educación
     genero_cod = encoder_genero.transform([genero])[0]
     educacion_cod = encoder_educacion.transform([educacion])[0]
-    
+
     # Crear vector de entrada
     entrada = np.array([[edad, genero_cod, educacion_cod, experiencia]])
-    
-    # Hacer la predicción
-    prediccion = modelo.predict(entrada)[0]
-    
-    return round(prediccion, 2)
+
+    # Hacer la predicción (salario anual)
+    salario_anual = modelo.predict(entrada)[0]
+    salario_mensual = salario_anual / 12
+
+    return round(salario_anual, 2), round(salario_mensual, 2)
