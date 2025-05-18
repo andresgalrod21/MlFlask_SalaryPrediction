@@ -12,7 +12,7 @@ df = df.dropna()
 encoder_gender = LabelEncoder()
 encoder_edu = LabelEncoder()
 
-df['Gender'] = encoder_gender.fit_transform(df['Gender'])  # Male=1, Female=0 (por ejemplo)
+df['Gender'] = encoder_gender.fit_transform(df['Gender'])  
 df['Education Level'] = encoder_edu.fit_transform(df['Education Level'])
 
 # Variables predictoras y objetivo
